@@ -1,0 +1,23 @@
+type Query {
+    info: String!
+    entry(id: ID!): Entry!
+    list: [Entry!]!
+    users: [User!]!
+}
+
+type Mutation {
+    addEntry(description: String!, isMarked: Boolean): Entry!
+}
+
+type Entry {
+    id: ID!
+    description: String!
+    owner: User
+    isMarked: Boolean
+    createdOn: String!
+}
+
+type User {
+    id: ID!
+    name: String!
+}
