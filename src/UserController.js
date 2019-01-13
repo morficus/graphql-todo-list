@@ -22,6 +22,7 @@ module.exports = {
      * @returns {Promise<object>}
      */
     async getById(userId) {
+        console.log('-- calling "UserController.getById()"')
         const users = await this.list()
         const match = users.find(user => user.id === userId)
 
@@ -38,6 +39,7 @@ module.exports = {
      * @returns {Promise<object>}
      */
     async add(user) {
+        console.log('-- calling "UserController.add()"')
         const users = await this.list()
 
         const newUser = {
@@ -57,6 +59,7 @@ module.exports = {
      * @returns {Promise<object>}
      */
     async update(updatedUser) {
+        console.log('-- calling "UserController.update()"')
         const users = await this.list()
 
         const targetIndex = users.findIndex(user => user.id === updatedUser.id)
@@ -82,6 +85,7 @@ module.exports = {
      * @returns {Promise<boolean>}
      */
     async delete(userId) {
+        console.log('-- calling "UserController.delete()"')
         const users = await this.list()
         const targetIndex = users.findIndex(user => user.id === userId)
 

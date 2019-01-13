@@ -24,6 +24,7 @@ module.exports = {
      * @returns {Promise<object>}
      */
     async getById(taskId) {
+        console.log('-- calling "TaskController.getById()"')
         const tasks = await this.list()
         const match = tasks.find(task => task.id === taskId)
 
@@ -40,6 +41,7 @@ module.exports = {
      * @returns {Promise<array>}
      */
     async getByUser(userId) {
+        console.log('-- calling "TaskController.getByUser()"')
         const tasks = await this.list()
         return tasks.filter(task => task.owner === userId)
     },
@@ -50,6 +52,7 @@ module.exports = {
      * @returns {Promise<object>}
      */
     async add(task) {
+        console.log('-- calling "TaskController.add()"')
         const user = await UserController.getById(task.owner)
         if (!user) {
             throw new Error(`Did not create the task because there is no such user - ${task.owner}`)
@@ -78,6 +81,7 @@ module.exports = {
      * @returns {Promise<object>}
      */
     async update(updatedTask) {
+        console.log('-- calling "TaskController.update()"')
         const tasks = await this.list()
 
         const targetIndex = tasks.findIndex(task => task.id === updatedTask.id)
@@ -103,6 +107,7 @@ module.exports = {
      * @returns {Promise<boolean>}
      */
     async delete(taskId) {
+        console.log('-- calling "TaskController.delete()"')
         const tasks = await this.list()
         const targetIndex = tasks.findIndex(task => task.id === taskId)
 
