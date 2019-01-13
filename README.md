@@ -12,7 +12,7 @@ At this point the API up and running at `http://localhost:4000/`.
 If you open this URL in a browser you will see the GraphQL explorer, which will allow you to explore the current Schema.  
 
 ## Samples
-Some sample queries can be found here: [https://graphqlbin.com/v2/5Q2RCg](https://graphqlbin.com/v2/5Q2RCg).  
+Some sample queries can be found here: [https://graphqlbin.com/v2/gZw2tN](https://graphqlbin.com/v2/gZw2tN).  
 If the local server is running, you can just run those queries and they will actually work.
 
 

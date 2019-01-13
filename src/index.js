@@ -13,12 +13,18 @@ const resolvers = {
             return entries
         },
         users: () => users,
-        entry: (parent, queryArgs) => {
+        getEntryById: (parent, queryArgs) => {
             // because this is a top-level query... `parent` will always be empty
             // `queryArgs` are anything passed in the parenthesis when doing a query
 
             // the gist of this function basically tells GraphQL how to find a single entry by its ID
-            return entries.find(entry => entry.id === queryArgs.id)
+            const match = entries.find(entry => entry.id === queryArgs.id)
+
+            if (match) {
+                return match
+            } else {
+                throw new Error('Entry not found')
+            }
         }
     },
 
@@ -36,6 +42,29 @@ const resolvers = {
 
             entries.push(newEntry)
             return newEntry
+        },
+
+        deleteEntry: (parent, queryArgs) => {
+            const targetIndex = entries.findIndex(entry => entry.id === queryArgs.id)
+            const deletedEntries = entries.splice(targetIndex, 1)
+
+            return deletedEntries.length > 0
+        },
+
+        updateEntry(parent, queryArgs) {
+            const targetIndex = entries.findIndex(entry => entry.id === queryArgs.id)
+
+            if (targetIndex === -1) {
+                throw new Error('Entry not found')
+            }
+
+            const existingEntry = entries[targetIndex]
+
+            const updatedEntry = Object.assign({}, existingEntry, queryArgs)
+
+            entries.splice(targetIndex, 1, updatedEntry)
+
+            return updatedEntry
         }
     },
 

@@ -1,12 +1,14 @@
 type Query {
     info: String!
-    entry(id: ID!): Entry!
+    getEntryById(id: ID!): Entry
     list: [Entry!]!
     users: [User!]!
 }
 
 type Mutation {
     addEntry(description: String!, isMarked: Boolean): Entry!
+    deleteEntry(id: ID!): Boolean
+    updateEntry(id: ID!, description: String!, isMarked: Boolean): Entry!
 }
 
 type Entry {
