@@ -1,25 +1,31 @@
 type Query {
     info: String!
-    getEntryById(id: ID!): Entry
-    list: [Entry!]!
+    getTaskById(id: ID!): Task
+    getUserById(id: ID!): User
+    tasks: [Task!]!
     users: [User!]!
 }
 
 type Mutation {
-    addEntry(description: String!, isMarked: Boolean): Entry!
-    deleteEntry(id: ID!): Boolean
-    updateEntry(id: ID!, description: String!, isMarked: Boolean): Entry!
+    addTask(description: String!, isMarked: Boolean, owner: String!): Task!
+    deleteTask(id: ID!): Boolean
+    updateTask(id: ID!, description: String!, isStared: Boolean, isComplete: Boolean, owner: String): Task!
+    addUser(name: String!): User!
+    deleteUser(id: ID!): Boolean
+    updateUser(id: ID!, name: String!): User
 }
 
-type Entry {
+type Task {
     id: ID!
     description: String!
     owner: User
-    isMarked: Boolean
+    isStared: Boolean
+    isComplete: Boolean
     createdOn: String!
 }
 
 type User {
     id: ID!
     name: String!
+    tasks: [Task]!
 }

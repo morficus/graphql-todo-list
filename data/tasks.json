@@ -1,0 +1,58 @@
+[
+  {
+    "id": "task-48",
+    "description": "Buy milk and eggs",
+    "createdOn": "Sun Jan 13 2019 15:59:43 GMT-0500 (EST)",
+    "isStared": false,
+    "isComplete": false,
+    "owner": "user-1"
+  },
+  {
+    "id": "task-30",
+    "description": "Get in the robot",
+    "createdOn": "Sun Jan 13 2019 15:59:51 GMT-0500 (EST)",
+    "isStared": false,
+    "isComplete": false,
+    "owner": "user-1"
+  },
+  {
+    "id": "task-36",
+    "description": "Find a solution to war in the Middle East",
+    "createdOn": "Sun Jan 13 2019 16:00:05 GMT-0500 (EST)",
+    "isStared": false,
+    "isComplete": false,
+    "owner": "user-1"
+  },
+  {
+    "id": "task-9",
+    "description": "Solve world hunger",
+    "createdOn": "Sun Jan 13 2019 16:00:15 GMT-0500 (EST)",
+    "isStared": false,
+    "isComplete": false,
+    "owner": "user-1"
+  },
+  {
+    "id": "task-75",
+    "description": "Start a human colony on Mars",
+    "createdOn": "Sun Jan 13 2019 16:01:05 GMT-0500 (EST)",
+    "isStared": false,
+    "isComplete": false,
+    "owner": "user-2"
+  },
+  {
+    "id": "task-87",
+    "description": "Build dyson sphere around our sun",
+    "createdOn": "Sun Jan 13 2019 16:01:59 GMT-0500 (EST)",
+    "isStared": false,
+    "isComplete": false,
+    "owner": "user-2"
+  },
+  {
+    "id": "task-18",
+    "description": "Start international lunar base",
+    "createdOn": "Sun Jan 13 2019 16:02:19 GMT-0500 (EST)",
+    "isStared": false,
+    "isComplete": false,
+    "owner": "user-2"
+  }
+]
