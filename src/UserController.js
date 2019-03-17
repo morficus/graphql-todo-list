@@ -44,7 +44,8 @@ module.exports = {
 
         const newUser = {
             id: `user-${Math.round(Math.random() * 100)}`,
-            name: user.name
+            firstName: user.firstName,
+            lastName: user.lastName
         }
 
         users.push(newUser)

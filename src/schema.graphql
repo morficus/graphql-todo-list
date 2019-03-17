@@ -10,9 +10,9 @@ type Mutation {
     addTask(description: String!, isMarked: Boolean, owner: String!): Task!
     deleteTask(id: ID!): Boolean
     updateTask(id: ID!, description: String!, isStared: Boolean, isComplete: Boolean, owner: String): Task!
-    addUser(name: String!): User!
+    addUser(firstName: String!, lastName: String!): User!
     deleteUser(id: ID!): Boolean
-    updateUser(id: ID!, name: String!): User
+    updateUser(id: ID!, firstName: String!, lastName: String!): User
 }
 
 type Task {
@@ -26,6 +26,7 @@ type Task {
 
 type User {
     id: ID!
-    name: String!
+    firstName: String!
+    lastName: String!
     tasks: [Task]!
 }
